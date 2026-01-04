@@ -1,3 +1,4 @@
+
 name: Build and Deploy
 
 on:
@@ -22,7 +23,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          # 移除了 cache: 'npm'，因為專案中沒有 package-lock.json，這會導致 Action 報錯。
 
       - name: Install dependencies
         run: npm install
